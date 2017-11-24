@@ -23,10 +23,8 @@ class MainTableViewController: UIViewController, XMLParserDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Activutty Indicator start
         myActvityIndicator.startAnimating()
-
+        getList(numOfRows: 0)
         // Do any additional setup after loading the view.
         myTableView.dataSource = self
         myTableView.delegate = self
@@ -60,7 +58,6 @@ class MainTableViewController: UIViewController, XMLParserDelegate, UITableViewD
         
         myTableView.reloadData()
     }
-    
     
     func getList(numOfRows:Int) { //numOfRows를 입력
         //let str = detailEndPoint + "?serviceKey=\(servieKey)&numsofRows=20"
@@ -100,12 +97,14 @@ class MainTableViewController: UIViewController, XMLParserDelegate, UITableViewD
             }
         }
     }
-
     
     //*******새로 추가된 함수 - 목록데이터를 가지고 상세데이터를 가져와서 저장하는 함수
     // Detail Data 가져오는 부분을 saveDetail 메소드로 extract
     func saveDetail(url:URL) {
-        let tempItems = items  // tableView에서 재활용
+        
+        // "loc" key로 items를 sort
+        let sortedItems = items.sorted{($1["loc"])! > ($0["loc"])!}
+        let tempItems = sortedItems  // tableView에서 재활용
         //print("items = \(items)")
         
         items = []
@@ -129,7 +128,6 @@ class MainTableViewController: UIViewController, XMLParserDelegate, UITableViewD
 
         }
         //-----------------thread controll------------------------
- 
     }
  
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {

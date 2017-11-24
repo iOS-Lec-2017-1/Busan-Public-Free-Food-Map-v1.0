@@ -49,7 +49,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="ZYX-EA-jYk" kind="push" identifier="goSingleMap" id="8gj-Iq-4dn"/>
+                                            <segue destination="ZYX-EA-jYk" kind="show" identifier="goSingleMap" id="8gj-Iq-4dn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -75,6 +75,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aH8-vO-qfY">
                         <barButtonItem key="rightBarButtonItem" image="pin-map-7.png" id="KB8-nA-zwu">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="1JY-FD-5x6" kind="show" identifier="goTotalMap" id="PjV-n7-dR3"/>
                             </connections>

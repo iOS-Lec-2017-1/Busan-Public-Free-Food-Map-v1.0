@@ -22,45 +22,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2017년 김종현. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="obG-Y5-kRd">
-                                <rect key="frame" x="20" y="626.5" width="335" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="free_meal.png" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-xA-DoJ">
-                                <rect key="frame" x="60.5" y="225" width="254" height="217"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="254" id="9tV-QC-Lgw"/>
-                                    <constraint firstAttribute="height" constant="217" id="sjw-dp-E35"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="부산 무료 급식소" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
-                                <rect key="frame" x="20" y="107" width="335" height="43"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="20" y="110.5" width="335" height="47"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meal.png" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-xA-DoJ">
+                                <rect key="frame" x="70" y="190" width="235" height="307"/>
+                                <color key="backgroundColor" red="0.96727341413497925" green="0.76381725237298392" blue="0.1071231865093019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96727341410000001" green="0.76381725239999998" blue="0.10712318649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
                             <constraint firstAttribute="centerX" secondItem="GJd-Yh-RWb" secondAttribute="centerX" id="Q3B-4B-g5h"/>
-                            <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" symbolic="YES" id="SfN-ll-jLj"/>
-                            <constraint firstItem="NL9-xA-DoJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VX1-Fw-mc4"/>
-                            <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="bottom" multiplier="1/3" constant="-93.833333333333314" id="moa-c2-u7t"/>
-                            <constraint firstItem="NL9-xA-DoJ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tnp-TL-PMw"/>
+                            <constraint firstAttribute="trailing" secondItem="NL9-xA-DoJ" secondAttribute="trailing" constant="70" id="SDQ-WV-ftd"/>
+                            <constraint firstItem="NL9-xA-DoJ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="190" id="TYn-7c-5CH"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="NL9-xA-DoJ" secondAttribute="bottom" constant="170" id="lBp-fS-kDS"/>
+                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="bottom" multiplier="1/3" constant="-88.833335876464844" id="moa-c2-u7t"/>
                             <constraint firstItem="GJd-Yh-RWb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" symbolic="YES" id="x7j-FC-K8j"/>
+                            <constraint firstItem="NL9-xA-DoJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="70" id="yhz-9Q-sTA"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="84" y="384"/>
         </scene>
     </scenes>
     <resources>
-        <image name="free_meal.png" width="262" height="193"/>
+        <image name="meal.png" width="1224" height="2402"/>
     </resources>
 </document>
