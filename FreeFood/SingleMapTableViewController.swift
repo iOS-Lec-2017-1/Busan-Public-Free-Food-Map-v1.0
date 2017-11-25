@@ -87,15 +87,15 @@ class SingleMapTableViewController: UITableViewController, CLLocationManagerDele
     func zoomToRegion() {
         // 35.162685, 129.064238
         let center = CLLocationCoordinate2DMake(sLat!, sLong!)
-        let span = MKCoordinateSpanMake(0.9, 0.9)
+        let span = MKCoordinateSpanMake(0.4, 0.4)
         let region = MKCoordinateRegionMake(center, span)
         singleMapView.setRegion(region, animated: true)
     }
     
     // 콘솔(print)로 현재 위치 변화 출력
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let coor = manager.location?.coordinate
-        print("latitute" + String(describing: coor?.latitude) + "/ longitude" + String(describing: coor?.longitude))
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        let coor = manager.location?.coordinate
+//        print("latitute" + String(describing: coor?.latitude) + "/ longitude" + String(describing: coor?.longitude))
+//    }
 
 }

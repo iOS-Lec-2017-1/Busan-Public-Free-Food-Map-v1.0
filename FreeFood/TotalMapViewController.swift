@@ -8,16 +8,30 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class TotalMapViewController: UIViewController {
     
     @IBOutlet weak var myMapView: MKMapView!
+    var locationManager: CLLocationManager!
     var tItems:[[String:String]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // 현재 위치 트랙킹
+        locationManager = CLLocationManager()
+        //locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        //locationManager.startUpdatingHeading()
+        
+        // 지도에 현재 위치 마크를 보여줌
+        myMapView.showsUserLocation = true
+        
         self.title = "부산 무료급식소 지도"
         zoomToRegion()
         
