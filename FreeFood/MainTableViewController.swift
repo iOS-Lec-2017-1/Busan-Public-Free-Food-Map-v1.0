@@ -23,8 +23,8 @@ class MainTableViewController: UIViewController, XMLParserDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        myActvityIndicator.startAnimating()
-        getList(numOfRows: 0)
+        //myActvityIndicator.startAnimating()
+        //getList(numOfRows: 0)
         // Do any additional setup after loading the view.
         myTableView.dataSource = self
         myTableView.delegate = self
@@ -32,31 +32,37 @@ class MainTableViewController: UIViewController, XMLParserDelegate, UITableViewD
         self.title = "부산 무료 급식소"
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         
-        let fileManager = FileManager.default
-        let url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("data.plist")
+//        let fileManager = FileManager.default
+//        let url = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("data.plist")
         
-        //print(url)
+//        print("file path = \(String(describing: url))")
+//
+//        시작할때마다 TotalCount를 받아옴
+//        getList(numOfRows: 0)
+//
+//        if fileManager.fileExists(atPath: (url?.path)!) {
+//            //파일이 있으면 파일에서 읽어옴
+//            items = NSArray(contentsOf: url!) as! Array
+//
+//            //파일에서 읽어본 갯수와 totalCount를 비교
+//            if (items.count != totalCount) {
+//                //파일에서 읽어본 갯수와 totalCount가 다르면(변화가 있으면) 다시 읽어와서 저장
+//                getList(numOfRows: totalCount)
+//                saveDetail(url: url!)
+//            }
+//        } else {
+//            //******* 파일이 없으면
+//            getList(numOfRows: totalCount)
+//            saveDetail(url: url!)
+//        }
         
-        //시작할때마다 TotalCount를 받아옴
-        getList(numOfRows: 0)
+        let path = Bundle.main.path(forResource: "data", ofType: "plist")
+        items = NSArray(contentsOfFile: path!) as! [[String : String]]
         
-        if fileManager.fileExists(atPath: (url?.path)!) {
-            //파일이 있으면 파일에서 읽어옴
-            items = NSArray(contentsOf: url!) as! Array
-            
-            //파일에서 읽어본 갯수와 totalCount를 비교
-            if (items.count != totalCount) {
-                //파일에서 읽어본 갯수와 totalCount가 다르면(변화가 있으면) 다시 읽어와서 저장
-                getList(numOfRows: totalCount)
-                saveDetail(url: url!)
-            }
-        } else {
-            //******* 파일이 없으면
-            getList(numOfRows: totalCount)
-            saveDetail(url: url!)
-        }
+        //saveDetail(url: url!)
         
         myTableView.reloadData()
+ 
     }
     
     func getList(numOfRows:Int) { //numOfRows를 입력
@@ -121,8 +127,8 @@ class MainTableViewController: UIViewController, XMLParserDelegate, UITableViewD
                 //-------tableview(main thread사용(ui는 main thread 사용 필수))---
                 DispatchQueue.main.async {
                     self.myTableView.reloadData()
-                    let temp = self.items as NSArray  // NSArry는 화일로 저장하기 위함
-                    temp.write(to: url, atomically: true)
+                    //let temp = self.items as NSArray  // NSArry는 화일로 저장하기 위함
+                    //temp.write(to: url, atomically: true)
                 }
             }
 
@@ -176,10 +182,10 @@ class MainTableViewController: UIViewController, XMLParserDelegate, UITableViewD
         
         // Configure the cell...
         // cell이 11개가 되면 Activity Indicator를 stop & Hide
-        if indexPath.row == 11 {
-                self.myActvityIndicator.stopAnimating()
-                self.myActvityIndicator.hidesWhenStopped = true
-        }
+//        if indexPath.row == 11 {
+//                self.myActvityIndicator.stopAnimating()
+//                self.myActvityIndicator.hidesWhenStopped = true
+//        }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "RE", for: indexPath)
         

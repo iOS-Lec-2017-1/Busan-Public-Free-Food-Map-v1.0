@@ -25,17 +25,16 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="부산 무료 급식소" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
                                 <rect key="frame" x="20" y="110.5" width="335" height="47"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="0.49605493193241035" blue="0.04998233345128078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meal.png" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-xA-DoJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="NL9-xA-DoJ">
                                 <rect key="frame" x="70" y="190" width="235" height="307"/>
-                                <color key="backgroundColor" red="0.96727341413497925" green="0.76381725237298392" blue="0.1071231865093019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.96727341410000001" green="0.76381725239999998" blue="0.10712318649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="GJd-Yh-RWb" secondAttribute="centerX" id="Q3B-4B-g5h"/>
                             <constraint firstAttribute="trailing" secondItem="NL9-xA-DoJ" secondAttribute="trailing" constant="70" id="SDQ-WV-ftd"/>
@@ -53,6 +52,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="meal.png" width="1224" height="2402"/>
+        <image name="foodicon.png" width="808" height="805"/>
     </resources>
 </document>
